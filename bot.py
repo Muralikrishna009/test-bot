@@ -1,22 +1,34 @@
-import os
-from selenium import webdriver
-from time import sleep
-from selenium.webdriver import ActionChains
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-import random
+# import os
+# from selenium import webdriver
+# from time import sleep
+# from selenium.webdriver import ActionChains
+# from selenium.webdriver.common.by import By
+# from selenium.webdriver.chrome.service import Service
+# from webdriver_manager.chrome import ChromeDriverManager
+# import random
 
-os.environ['PATH'] += 'C:/Users/mural/Desktop/.vs/.vscode/python/selenium/chromedriver.exe'
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-pask = 'sai@srinivas'
+from selenium import webdriver
+import os
+
+chrome_options = webdriver.ChromeOptions()
+chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument("--no-sandbox")
+driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+
+# os.environ['PATH'] += 'C:/Users/mural/Desktop/.vs/.vscode/python/selenium/chromedriver.exe'
+# driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+logid = input('Enter usename: ')
+pask = input('Enter password: ')
+tech  = input('Enter test link: ')
 driver.get('https://myprofile.technicalhub.io/login')
 driver.implicitly_wait(20)
 driver.maximize_window()
 uname = driver.find_element(By.ID, 'username')
 pas = driver.find_element(By.ID,'password')
 
-uname.send_keys('19a91a0540')
+uname.send_keys(logid)
 pas.send_keys(pask)
 
 login = driver.find_element(By.ID,'btn_login')
@@ -28,7 +40,7 @@ op.click()
 driver.implicitly_wait(20)
 
 #tech = 'https://ajivika.technicalhub.io/course/view.php?id=224'
-tech  = 'https://ajivika.technicalhub.io/course/view.php?id=227'
+
 driver.get(tech)
 driver.implicitly_wait(5)
 
