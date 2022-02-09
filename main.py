@@ -15,6 +15,7 @@ chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--no-sandbox")
 driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 
+
 # os.environ['PATH'] += 'C:/Users/mural/Desktop/.vs/.vscode/python/selenium/chromedriver.exe'
 # driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 logid = '19A91A0584'#input('Enter usename: ')
