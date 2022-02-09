@@ -17,9 +17,9 @@ driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), c
 
 # os.environ['PATH'] += 'C:/Users/mural/Desktop/.vs/.vscode/python/selenium/chromedriver.exe'
 # driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-logid = input('Enter usename: ')
-pask = input('Enter password: ')
-tech  = input('Enter test link: ')
+logid = '19A91A0584'#input('Enter usename: ')
+pask = 'Murali@95535'#input('Enter password: ')
+#tech  = input('Enter test link: ')
 driver.get('https://myprofile.technicalhub.io/login')
 driver.implicitly_wait(20)
 driver.maximize_window()
@@ -37,7 +37,7 @@ op.click()
 
 driver.implicitly_wait(20)
 
-#tech = 'https://ajivika.technicalhub.io/course/view.php?id=224'
+tech = 'https://ajivika.technicalhub.io/course/view.php?id=224'
 
 driver.get(tech)
 driver.implicitly_wait(5)
