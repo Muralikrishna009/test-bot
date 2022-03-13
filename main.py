@@ -19,7 +19,7 @@ driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), c
 # os.environ['PATH'] += 'C:/Users/mural/Desktop/.vs/.vscode/python/selenium/chromedriver.exe'
 # driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 logid = '19A91A0584'#input('Enter usename: ')
-pask = 'Murali@95535'#input('Enter password: ')
+pask = ''#input('Enter password: ')
 #tech  = input('Enter test link: ')
 driver.get('https://myprofile.technicalhub.io/login')
 driver.implicitly_wait(20)
